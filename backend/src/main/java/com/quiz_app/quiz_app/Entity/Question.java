@@ -1,5 +1,6 @@
 package com.quiz_app.quiz_app.Entity;
 
+import com.quiz_app.quiz_app.Dao.QuestionDao;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,4 +22,10 @@ public class Question {
     private String rightAnswer;
     private String difficultyLevel;
     private String category;
+
+    public String getrightAnswer() {
+        return this.rightAnswer;
+    }
+
+
 }
