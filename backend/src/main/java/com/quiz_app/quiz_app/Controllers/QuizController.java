@@ -21,8 +21,8 @@ public class QuizController {
     QuizService quizService;
 
     @PostMapping("create")
-    public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam int numQ, @RequestParam String title) {
-        return quizService.createQuiz(category,numQ,title);
+    public ResponseEntity<String> createQuiz(@RequestParam int id ,@RequestParam String category, @RequestParam int numQ, @RequestParam String title) {
+        return quizService.createQuiz(id,category,numQ,title);
 
     }
 
@@ -34,5 +34,10 @@ public class QuizController {
     @PostMapping("submit/{id}")
     public ResponseEntity<Integer> submitQuiz(@PathVariable Integer id, @RequestBody List<Response> responses ) {
         return quizService.calculateResult(id, responses);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteQuestion(@PathVariable Integer id){
+        return quizService.deleteQuiz(id);  // Use quizService instance
     }
 }

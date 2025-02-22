@@ -21,7 +21,7 @@ const SideBar = () => {
         </NavLink>
         <NavLink className="sidebar-link" to="/delete">
           <img className="sidebar-icon" alt="" src={assets.deleteicon} />
-          <p className="sidebar-text">Delete Quize</p>
+          <p className="sidebar-text">Delete Questions</p>
         </NavLink>
         
       </div>

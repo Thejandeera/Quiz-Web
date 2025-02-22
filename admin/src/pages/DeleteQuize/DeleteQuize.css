@@ -1,11 +1,19 @@
 .delete-container {
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f8f9fa;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .delete-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #f8f9fa;
-    animation: fadeIn 0.5s ease-in-out;
+    width: 45%; /* Adjust the width of each section */
   }
   
   h2 {
@@ -41,7 +49,7 @@
   }
   
   .delete-button:hover {
-    background-color: #015249;
+    background-color: #000000;
     transform: scale(1.05);
   }
   

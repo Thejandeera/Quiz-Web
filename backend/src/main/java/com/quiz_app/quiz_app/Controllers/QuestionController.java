@@ -34,8 +34,16 @@ public class QuestionController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteQuestion(@PathVariable Integer id){
-        return questionService.deleteQuestion(id);
+    public ResponseEntity<String> deleteQuestion(@PathVariable Integer id) {
+        try {
+            String result = questionService.deleteQuestion(id);
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Question already in a quize . Delete Quize first");
+        }
     }
+
 
 }

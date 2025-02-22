@@ -1,29 +1,26 @@
+// src/components/AllQuestions/AllQuestions.jsx
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import QuizPopup from "../components/QuizPopup/QuizPopup.jsx";
-import "./Quiz.css";
+import "./AllQuestions.css";
 
-const Quiz = () => {
-  const [quizId, setQuizId] = useState(null);
+const AllQuestions = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const navigate = useNavigate();
 
-  // Fetch quiz data when quizId is set
+  // Fetch all questions from the API
   useEffect(() => {
-    if (quizId) {
-      axios
-        .get(`http://localhost:8080/Quiz/get/${quizId}`)
-        .then((response) => {
-          setQuestions(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching quiz:", error);
-        });
-    }
-  }, [quizId]);
+    axios
+      .get("http://localhost:8080/question/allQuestions")
+      .then((response) => {
+        setQuestions(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching questions:", error);
+      });
+  }, []);
 
   const handleSelectAnswer = (option) => {
     setSelectedAnswers({
@@ -43,12 +40,8 @@ const Quiz = () => {
     navigate("/home");
   };
 
-  if (!quizId) {
-    return <QuizPopup onSubmit={setQuizId} />;
-  }
-
   if (questions.length === 0) {
-    return <div className="loading">Loading Quiz...</div>;
+    return <div className="loading">Loading Questions...</div>;
   }
 
   const currentQuestion = questions[currentQuestionIndex];
@@ -88,4 +81,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default AllQuestions;

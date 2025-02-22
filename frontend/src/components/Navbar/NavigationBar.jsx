@@ -18,7 +18,7 @@ const NavigationBar = () => {
       </div>
 
       <ul className="nav-links">
-        <li><Link to="/all-questions">All Questions</Link></li>
+        <li><Link to="/question-popup">All Questions</Link></li>
         <li><Link to="/quiz">Quiz</Link></li>
         <li><Link to="/languages">Languages</Link></li>
         <li><Link to="/about-us">About Us</Link></li>

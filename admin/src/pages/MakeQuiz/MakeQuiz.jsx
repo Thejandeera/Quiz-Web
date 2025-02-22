@@ -6,6 +6,7 @@ import "./MakeQuiz.css";
 
 const MakeQuiz = () => {
   const [formData, setFormData] = useState({
+    id: "",
     category: "",
     numQ: "",
     title: ""
@@ -19,17 +20,19 @@ const MakeQuiz = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { category, numQ, title } = formData;
+    const { id, category, numQ, title } = formData;
     try {
-      const response = await axios.post(`http://localhost:8080/Quiz/create?category=${category}&numQ=${numQ}&title=${title}`);
+      const response = await axios.post(`http://localhost:8080/Quiz/create?id=${id}&category=${category}&numQ=${numQ}&title=${title}`);
+      
       if (response.status === 200) {
         toast.success("Quiz created successfully!");
-        setFormData({ category: "", numQ: "", title: "" });
+        setFormData({ id: "", category: "", numQ: "", title: "" });
       } else {
         toast.error("Failed to create quiz.");
       }
     } catch (error) {
-      toast.error("Error creating quiz.");
+        toast.error(error.response.data);
+      
     }
   };
 
@@ -37,6 +40,7 @@ const MakeQuiz = () => {
     <div className="make-quiz-container">
       <h2>Create a New Quiz</h2>
       <form onSubmit={handleSubmit} className="quiz-form">
+        <input type="text" name="id" placeholder="Quiz ID" value={formData.id} onChange={handleChange} required />
         <input type="text" name="category" placeholder="Category" value={formData.category} onChange={handleChange} required />
         <input type="number" name="numQ" placeholder="Number of Questions" value={formData.numQ} onChange={handleChange} required />
         <input type="text" name="title" placeholder="Quiz Title" value={formData.title} onChange={handleChange} required />

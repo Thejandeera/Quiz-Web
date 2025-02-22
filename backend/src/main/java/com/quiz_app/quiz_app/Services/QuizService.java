@@ -3,12 +3,8 @@ package com.quiz_app.quiz_app.Services;
 
 import com.quiz_app.quiz_app.Dao.QuizDao;
 import com.quiz_app.quiz_app.Dao.QuestionDao;
-import com.quiz_app.quiz_app.Entity.QuestionWrapper;
-import com.quiz_app.quiz_app.Entity.Quiz;
-import com.quiz_app.quiz_app.Entity.Question;
-import com.quiz_app.quiz_app.Entity.Response;
+import com.quiz_app.quiz_app.Entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -26,20 +22,41 @@ public class QuizService {
     @Autowired
     QuestionDao questionDao;
 
-    public ResponseEntity<String> createQuiz(String category, int numQ, String title) {
 
-        List<Question> questions = questionDao.findRandomQuestionsByCategory(category,numQ);
 
+    // Remove the static keyword here
+    public String deleteQuiz(Integer id) {
+        quizDao.deleteById(id);  // Use the injected quizDao instance
+        return "Successfully deleted question";
+    }
+
+    public ResponseEntity<String> createQuiz(int id, String category, int numQ, String title) {
+        // Check if the ID has at least 6 digits
+        if (String.valueOf(id).length() < 6) {
+            return new ResponseEntity<>("ID must be at least 6 digits long", HttpStatus.BAD_REQUEST);
+        }
+
+        // Check if the quiz ID already exists
+        Optional<Quiz> existingQuiz = quizDao.findById(id);
+        if (existingQuiz.isPresent()) {
+            return new ResponseEntity<>("Quiz already exists. Change the ID", HttpStatus.CONFLICT);
+        }
+
+        // Retrieve random questions for the quiz
+        List<Question> questions = questionDao.findRandomQuestionsByCategory(category, numQ);
+
+        // Create and save the new quiz
         Quiz quiz = new Quiz();
+        quiz.setId(id);
         quiz.setTitle(title);
         quiz.setQuestions(questions);
 
         quizDao.save(quiz);
 
         return new ResponseEntity<>("Success", HttpStatus.OK);
-
-
     }
+
+
 
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(Integer id) {
         Optional<Quiz> quiz = quizDao.findById(id);
