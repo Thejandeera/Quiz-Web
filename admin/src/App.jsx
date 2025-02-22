@@ -11,6 +11,7 @@ import Home from "./pages/Home/Home.jsx";
 import MakeQuiz from "./pages/MakeQuiz/MakeQuiz.jsx";
 import StudentsScore from "./pages/StudentsScore/StudentsScore.jsx";
 import SideBar from "./components/SideBar.jsx";
+import DeleteQuize from "./pages/DeleteQuize/DeleteQuize.jsx";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <SideBar/>
         <Routes>
           <Route path="/add" element={<AddQuestions />} />
+          <Route path="/delete" element={<DeleteQuize />} />
           <Route path="/makequiz" element={<MakeQuiz />} />
           <Route path="/sscore" element={<StudentsScore />} />
           <Route path="/" element={<Home />} />

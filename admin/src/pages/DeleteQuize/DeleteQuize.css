@@ -1,0 +1,62 @@
+.delete-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  h2 {
+    color: #000000;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .delete-input {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .delete-input:focus {
+    border-color: #015249;
+  }
+  
+  .delete-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #696969;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .delete-button:hover {
+    background-color: #015249;
+    transform: scale(1.05);
+  }
+  
+  .delete-message {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #A5A5AF;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

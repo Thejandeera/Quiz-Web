@@ -10,7 +10,7 @@ const NavigationBar = () => {
     <nav className="navbar">
       <div className="logo">
       <img 
-          src="/icons/profile.png" 
+          src="/icons/logo4.png" 
           alt="Profile" 
           className="icon" 
           onClick={() => navigate("/home")}

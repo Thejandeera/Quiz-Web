@@ -1,0 +1,79 @@
+/* MakeQuiz.css */
+
+.make-quiz-container {
+    background-color: rgb(224, 223, 223);
+    color: black;
+    max-width: 400px;
+    margin-top: 130px;
+    margin-left: auto;
+    margin-right:  auto;
+    margin-bottom:  auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    animation: slideDown 0.6s ease-in-out;
+  }
+  
+  .quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input:focus {
+    border-color: black;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .submit-btn {
+    background-color: black;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .submit-btn:disabled {
+    background-color: #777;
+    cursor: not-allowed;
+  }
+  
+  .submit-btn:hover:not(:disabled) {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

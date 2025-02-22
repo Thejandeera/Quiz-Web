@@ -1,0 +1,52 @@
+.add-question-container {
+    max-width: 500px;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    padding: 20px;
+    background: rgb(224, 223, 223);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    color: black;
+  }
+  
+  .question-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    color: black;
+  }
+  
+  .submit-btn {
+    background: black;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  .submit-btn button:disabled{
+    background: rgb(118, 118, 118);
+    color: white;
+    
+  }
+  
+  .submit-btn:hover {
+    background: gray;
+  }
+  
