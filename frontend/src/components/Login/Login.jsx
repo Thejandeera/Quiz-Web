@@ -28,25 +28,27 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Login</h2>
-        <form onSubmit={handleLogin}>
-          <input 
-            type="email" 
-            placeholder="Email" 
-            value={credentials.email} 
-            onChange={(e) => setCredentials({ ...credentials, email: e.target.value })} 
-          />
-          <input 
-            type="password" 
-            placeholder="Password" 
-            value={credentials.password} 
-            onChange={(e) => setCredentials({ ...credentials, password: e.target.value })} 
-          />
-          <button type="submit">Login</button>
-        </form>
-        <p className="signup-link">Don't have an account? <span onClick={() => navigate("/signup")}>Sign up here</span></p>
+    <div className="cont" >
+      <div className="login-container">
+        <div className="login-box">
+          <h2>Login</h2>
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={credentials.email}
+              onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={credentials.password}
+              onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+            />
+            <button type="submit">Login</button>
+          </form>
+          <p className="signup-link">Don't have an account? <span onClick={() => navigate("/signup")}>Sign up here</span></p>
+        </div>
       </div>
     </div>
   );

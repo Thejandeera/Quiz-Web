@@ -10,6 +10,7 @@ import Login from "./components/Login/Login.jsx";
 import Home from "./components/Home/Home.jsx";
 import { ToastContainer } from "react-toastify";
 import Logout from "./components/Logout/Logout.jsx";
+import Quiz from "./pages/Quiz.jsx";
 
 const App = () => {
   return (
@@ -20,7 +21,9 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/quiz" element={<Quiz />} />
           <Route path="/profile" element={<div>Profile Page</div>} />
         </Routes>
       </Router>

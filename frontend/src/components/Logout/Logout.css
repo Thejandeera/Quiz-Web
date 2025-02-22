@@ -22,7 +22,7 @@
   
   .logout-box h2 {
     margin-bottom: 15px;
-    color: #3D8D7A;
+    color: #000000;
   }
   
   .buttons {
@@ -31,9 +31,18 @@
     gap: 15px;
   }
   
-  .yes-btn, .no-btn {
+  .yes-btn{
     padding: 10px 20px;
-    border: none;
+    border: 1px solid black; /* Correct syntax */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  .no-btn{
+    padding: 10px 20px;
+    border: 1px solid black; /* Correct syntax */
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
@@ -42,21 +51,25 @@
   }
   
   .yes-btn {
-    background: #3D8D7A;
-    color: white;
+    background: #000000;
+    color: rgb(255, 255, 255);
   }
   
   .yes-btn:hover {
-    background: #2C6F5E;
+    background: #ffffff;
+    color: black;
+    
   }
   
   .no-btn {
-    background: #B3D8A8;
+    background: #ffffff;
     color: black;
   }
   
   .no-btn:hover {
-    background: #96BE8C;
+    background: #000000;
+    color: white;
+    border: none;
   }
   
   /* Animations */

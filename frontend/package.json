@@ -12,6 +12,7 @@
   "dependencies": {
     "@mantine/core": "^7.17.0",
     "axios": "^1.7.9",
+    "framer-motion": "^12.4.7",
     "frontend": "file:",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",

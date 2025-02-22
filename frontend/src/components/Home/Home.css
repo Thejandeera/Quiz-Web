@@ -1,0 +1,114 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: url('back.jpg') no-repeat center center fixed; /* Light grey background for subtle contrast */
+    color: #333;
+}
+
+/* Home Container */
+.home-container {
+    display: flex;
+    justify-content: space-between; /* Spreads elements evenly */
+    align-items: center;
+    height: calc(100vh - 80px); /* Adjust height to fit viewport */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-left: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the container */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #4A4E69, #9A8C98);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    color: #F2E9E4;
+    max-width: 500px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hero-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #EDEDED;
+}
+
+/* Start Button */
+.start-btn {
+    background: #030a68;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn:hover {
+    background: #020850;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Container */
+.features-container {
+    margin-top: 60px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px;
+    flex: 1; 
+    border-color: black;
+}
+
+/* Feature Cards */
+.feature-card {
+    background: rgb(203, 202, 202);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #000000;
+}
