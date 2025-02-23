@@ -21,7 +21,7 @@ const NavigationBar = () => {
         <li><Link to="/question-popup">All Questions</Link></li>
         <li><Link to="/quiz">Quiz</Link></li>
         <li><Link to="/languages">Languages</Link></li>
-        <li><Link to="/about-us">About Us</Link></li>
+        <li><Link to="/about">About Us</Link></li>
         <li><Link to="/contact">Contact</Link></li>
       </ul>
 

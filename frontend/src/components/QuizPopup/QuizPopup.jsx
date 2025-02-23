@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./QuizPopup.css";
+import NavigationBar from "../Navbar/NavigationBar";
 
 const QuizPopup = ({ onSubmit }) => {
   const [quizId, setQuizId] = useState("");
@@ -10,7 +11,8 @@ const QuizPopup = ({ onSubmit }) => {
     }
   };
 
-  return (
+  return (<>
+    <NavigationBar />
     <div className="popup-overlay">
       <div className="popup-box">
         <h2>Enter Quiz ID</h2>
@@ -25,6 +27,7 @@ const QuizPopup = ({ onSubmit }) => {
         </button>
       </div>
     </div>
+  </>
   );
 };
 

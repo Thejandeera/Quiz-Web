@@ -3,27 +3,29 @@ import { useNavigate } from "react-router-dom";  // Import the useNavigate hook
 import "./PopupQuestion.css";  // Import the CSS for styling
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NavigationBar from "../Navbar/NavigationBar";
 
 const PopupQuestion = () => {
-    const id = "400890";
+  const id = "400890";
   const [key, setKey] = useState("");  // Define the state for key
   const [error, setError] = useState("");  // Error state to display error message
   const navigate = useNavigate();
 
   const handleSubmit = () => {
     if (key === id) {
-        console.log(id)
-        console.log(key)
-        toast.success("Getting into All Questions ")
+      console.log(id)
+      console.log(key)
+      toast.success("Getting into All Questions ")
       navigate("/all-questions");  // Navigate to /all-questions on correct key
     } else {
-        console.log(id)
-        console.log(key)
+      console.log(id)
+      console.log(key)
       toast.error("Invalid Key");  // Set error message if key is incorrect
     }
   };
 
-  return (
+  return (<>
+    <NavigationBar />
     <div className="popup-container">
       <div className="popup-card">
         <h2>Enter Access Key</h2>
@@ -40,6 +42,7 @@ const PopupQuestion = () => {
         {error && <div className="error">{error}</div>}  {/* Display error message */}
       </div>
     </div>
+  </>
   );
 };
 

@@ -12,8 +12,9 @@ import { ToastContainer } from "react-toastify";
 import Logout from "./components/Logout/Logout.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import AllQuestions from "./pages/AllQuestions/AllQuestions.jsx";
-import PopupQuestion from "./components/PopupQuestion/PopupQuestion.jsx";  // Ensure this import is correct
-import QuizPopup from "./components/QuizPopup/QuizPopup.jsx";
+import PopupQuestion from "./components/PopupQuestion/PopupQuestion.jsx";
+import About from "./pages/About/About.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
 
 const App = () => {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -35,6 +36,8 @@ const App = () => {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/all-questions" element={<AllQuestions />} />
           <Route path="/question-popup" element={<PopupQuestion />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<div>Profile Page</div>} />
         </Routes>
       </Router>
