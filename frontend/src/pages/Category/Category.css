@@ -1,0 +1,117 @@
+/* Category.css */
+
+.category-container {
+    background-color: rgb(220, 220, 220);
+    color: black;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    animation: slideDown 0.6s ease-in-out;
+  }
+  
+  .category-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .fetch-btn {
+    margin-top: 10px;
+    background-color: rgb(97, 97, 97);
+    color: rgb(231, 231, 231);
+    padding: 12px;
+    font-size: 1rem;    
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .fetch-btn:hover {
+    background-color: rgb(62, 62, 62);    
+    color: rgb(255, 255, 255);
+  }
+  
+  .question-card {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .option-btn {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .option-btn:hover, .option-btn.selected {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  .navigation {
+    margin-top: 15px;
+  }
+  
+  .next-btn, .finish-btn {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .next-btn:disabled, .finish-btn:disabled {
+    background-color: #777;
+    cursor: not-allowed;
+  }
+  
+  .next-btn:hover:not(:disabled), .finish-btn:hover:not(:disabled) {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

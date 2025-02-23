@@ -15,6 +15,8 @@ import AllQuestions from "./pages/AllQuestions/AllQuestions.jsx";
 import PopupQuestion from "./components/PopupQuestion/PopupQuestion.jsx";
 import About from "./pages/About/About.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+import Category from "./pages/Category/Category.jsx";
+import Landing from "./pages/Landing/Landing.jsx";
 
 const App = () => {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -34,6 +36,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/languages" element={<Category />} />
           <Route path="/all-questions" element={<AllQuestions />} />
           <Route path="/question-popup" element={<PopupQuestion />} />
           <Route path="/about" element={<About />} />

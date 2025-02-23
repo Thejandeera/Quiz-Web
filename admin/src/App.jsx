@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/delete" element={<DeleteQuize />} />
           <Route path="/makequiz" element={<MakeQuiz />} />
           <Route path="/sscore" element={<StudentsScore />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<AddQuestions />} />
         </Routes>
       </Router>
     </div>

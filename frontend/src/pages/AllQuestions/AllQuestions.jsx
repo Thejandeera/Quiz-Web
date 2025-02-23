@@ -37,7 +37,7 @@ const AllQuestions = () => {
 
   const handleFinishQuiz = () => {
     console.log("User Answers:", selectedAnswers);
-    navigate("/home");
+    navigate("/landing");
   };
 
   if (questions.length === 0) {

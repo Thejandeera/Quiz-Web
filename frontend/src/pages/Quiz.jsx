@@ -40,7 +40,7 @@ const Quiz = () => {
 
   const handleFinishQuiz = () => {
     console.log("User Answers:", selectedAnswers);
-    navigate("/home");
+    navigate("/landing");
   };
 
   if (!quizId) {
